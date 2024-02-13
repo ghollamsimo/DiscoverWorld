@@ -12,7 +12,7 @@ class UserController extends Controller
         $validation =  $request->validate([
             'name'=>'required',
             'email'=>'required',
-            'password'=>'required'
+            'password'=>'required',
         ]);
         $validation['password'] = bcrypt($validation['password']);
         $user = User::create($validation);

@@ -1,0 +1,8 @@
+.styled{
+    background-image: radial-gradient(#3134e8 1px, transparent 1px);
+    background-size: 22px 22px;
+    background-color: rgba(71, 212, 255, 0);
+    height:10rem;
+    width: 10rem;
+    display: flex;
+}

@@ -42,7 +42,7 @@ class RecitsController extends Controller
                 ]);
             }
 
-            return redirect()->route('utilisateur')->with('success', 'Aventure ajoutée avec succès!');
+            return redirect()->route('utilisateur')->with('success', 'Recits Created  successfully!');
         } else {
             return back()->with('error', 'Aucune image téléchargée!');
         }

@@ -19,8 +19,8 @@
 
             <div class="max-w-md w-full mx-auto border border-gray-300 rounded-md p-6">
                 <div class="text-center mb-12">
-                    <a href="javascript:void(0)"><img src="https://readymadeui.com/readymadeui.svg" alt="logo"
-                            class='w-40 inline-block' />
+                    <a href="/" class="ext-center text-3xl my-4 font-extrabold">
+                        Discover World
                     </a>
                 </div>
                 <form method="post" action="/register" id="inscriptionForm">

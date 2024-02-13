@@ -18,11 +18,9 @@
         <div class="bg-gray-50 font-[sans-serif] text-[#333]">
             <div class="min-h-screen flex flex-col items-center justify-center py-6 px-4">
                 <div class="max-w-md w-full border py-8 px-6 rounded border-gray-300 bg-white">
-                    <a href="javascript:void(0)"><img src="https://readymadeui.com/readymadeui.svg" alt="logo"
-                            class='w-40 mb-10' />
-                    </a>
+
                     <h2 class="text-center text-3xl my-4 font-extrabold">
-                        Log in to your account
+                        Discover World
                     </h2>
                     <form method="post" action="/login" id="loginForm">
                         @csrf
@@ -41,12 +39,12 @@
                         <div class="flex items-center justify-between gap-4">
                             <div class="flex items-center">
                                 <label for="remember-me" class="ml-3 block text-sm">
-                                    Vous n'avez pas de compte ?
+                                    If You dont Have Account You Can
                                 </label>
                             </div>
                             <div>
                                 <a href="/register" class="text-sm text-blue-600 hover:text-blue-500">
-                                    Inscrivez vous
+                                    Register
                                 </a>
                             </div>
                         </div>

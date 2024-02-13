@@ -76,15 +76,15 @@
             <div class="flex flex-wrap gap-6">
                 <form action="{{ route('filter.asc') }}" method="GET">
                     <button type="submit"
-                        class="py-2 px-4 mb-2 text-sm font-medium text-white bg-blue-500 rounded border border-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                        Oldest First
+                        class="rounded-3xl text-sm bg-blue-800 text-white p-1 px-6 sm:text-lg">
+                        Oldest
                     </button>
                 </form>
 
                 <form action="{{ route('filter.desc') }}" method="GET">
                     <button type="submit"
-                        class="py-2 px-4 mb-2 text-sm font-medium text-white bg-blue-500 rounded border border-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                        Newest First
+                        class="rounded-3xl text-sm bg-blue-800 text-white p-1 px-6 sm:text-lg">
+                        Newest
                     </button>
                 </form>
             </div>
@@ -95,7 +95,7 @@
                         class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option selected disabled>Select a continent</option>
                         <option value="All">All</option>
-                        <option value="Afrique">Africa</option>
+                        <option value="Afrique">Afrique</option>
                         <option value="Europe">Europe</option>
                         <option value="Asia">Asia</option>
                         <option value="North">North America</option>

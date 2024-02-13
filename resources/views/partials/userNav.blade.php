@@ -1,6 +1,8 @@
 <nav class="flex m-2 p-4 justify-between" >
     <div class="font-bold">
-        <img src="/images/logo.png" width="100px">
+        <a href="/" >
+            <img src="/images/logo.png" width="100px">
+        </a>
     </div>
 
     <div>
@@ -20,6 +22,9 @@
                     <div id="dropdownAvatar" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow font-normal	 w-44 ">
 
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUserAvatarButton">
+                            <li>
+                                <a href="/" class="block px-4 py-2 hover:bg-gray-100 text-black cursor-pointer	">Home</a>
+                            </li>
                             <li>
                                 <a data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block px-4 py-2 hover:bg-gray-100 text-black cursor-pointer	">Add Recits</a>
                             </li>

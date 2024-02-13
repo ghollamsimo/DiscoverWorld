@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->foreignId('user_id')->constrained('users');
             $table->string('destination');
-            $table->string('description');
+            $table->text('description');
             $table->string('conseils');
             $table->timestamps();
         });

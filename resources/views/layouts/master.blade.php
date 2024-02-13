@@ -8,11 +8,10 @@
     <title>Discover World | @yield('title')</title>
 </head>
 <body>
-    @include('partials.nav')
-    <main>
-        @yield('main')
-    </main>
-    @include('partials.footer')
-    
+@include('components.nav')
+<main>
+    @yield('main')
+</main>
+@include('components.footer')
 </body>
 </html>

@@ -17,8 +17,8 @@ class UserController extends Controller
         $validation['password'] = bcrypt($validation['password']);
         $user = User::create($validation);
         auth()->login($user);
-        
-        return redirect('/utilisateur') ;
+
+        return redirect('/profile') ;
 
     }
     public function logout(){
@@ -33,6 +33,6 @@ class UserController extends Controller
        if(auth()->attempt(['email'=>$validate['email'],'password' => $validate['password']])){
         $userId = Auth::id();
        }
-       return redirect()->route('utilisateur', ['userId' => $userId]);
+       return redirect()->route('profile', ['userId' => $userId]);
     }
 }

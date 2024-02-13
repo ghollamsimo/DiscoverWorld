@@ -32,9 +32,9 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/utilisateur', function () {
-    return view('utilisateur');
-})->name('utilisateur');
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
 // ---------------------------------------------------------------------
 
 // ----------------------------------------------------------------------
@@ -46,12 +46,14 @@ Route::post('/', [UserController::class, 'logout'])->name('logout');
 
 // --------------------------------------------------------------------------
 
-Route::post('/utilisateur', [RecitsController::class, 'addAventure'])->name('utilisateur');
-Route::get('/utilisateur', [RecitsController::class, 'afficherAventuresUser'])->name('aventures.utilisateur');
+Route::post('/profile', [RecitsController::class, 'Recit'])->name('profile');
+
+Route::get('/profile', [RecitsController::class, 'DisplayTheRecits'])->name('aventures.profile');
 Route::get('/', [RecitsController::class, 'afficherAll'])->name('welcome');
 
 Route::get('/singleRecit', [RecitsController::class, 'singleRecit'])->name('aventures.singleRecit');
 
+Route::get('/singleRecit' , [RecitsController::class , 'SingleRecitUser'])->name('aventures.singleRecit');
 
 Route::get('/filterDesc', [RecitsController::class, 'filterDesc'])->name('filter.desc');
 Route::get('/filterAsc', [RecitsController::class, 'filterAsc'])->name('filter.asc');

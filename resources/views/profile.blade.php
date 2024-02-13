@@ -1,11 +1,11 @@
 @extends('layouts.masterU')
 @section('title')
-    Utilisateur
+    profile
 @endsection
 @section('main')
     <div class=" max-w-screen-xl mx-auto p-4 service-section ">
         <div class="flex justify-between">
-            <h1 class="text-4xl text-center mt-6 font-bold font-serif">Mes Recits</h1>
+            <h1 class="text-4xl text-center mt-6 font-bold font-serif">Our Recits</h1>
 
 
 
@@ -15,7 +15,7 @@
                     <div class="relative bg-white rounded-lg shadow ">
                         <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 font-serif">
                             <h3 class="text-lg font-semibold  text-gray-900">
-                                Aventure
+                                Create Recits
                             </h3>
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center "
@@ -28,7 +28,7 @@
                                 <span class="sr-only">Close modal</span>
                             </button>
                         </div>
-                        <form method="POST" action=" {{ route('utilisateur') }} " class="p-4 md:p-5"
+                        <form method="POST" action=" {{ route('profile') }} " class="p-4 md:p-5"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="grid gap-4 mb-4 grid-cols-2">
@@ -46,11 +46,10 @@
                                         placeholder="Exemple : Afrique" required="">
                                 </div>
                                 <div class="col-span-2">
-                                    <label for=""
-                                        class="block mb-2 text-sm font-medium text-gray-900 ">Images</label>
-                                    <input type="file" name="images[]" id="images"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                                        placeholder="Inserer des images" multiple required>
+
+                                    <label class="block mb-2 text-sm font-medium text-gray-900 "  for="file_input">Upload file</label>
+                                    <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none " name="images[]" multiple required id="file_input" type="file">
+
                                 </div>
 
                                 <div class="col-span-2">
@@ -70,14 +69,14 @@
                                 </div>
                             </div>
                             <button type="submit"
-                                class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                class="inline-flex rounded-2 items-center text-black  font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                 <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
                                         d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                Ajouter
+                                Save
                             </button>
                         </form>
                     </div>
@@ -87,9 +86,9 @@
 
 
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 max-md:max-w-lg mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 max-md:max-w-lg mx-auto h-fit">
             @foreach ($aventures as $aventure)
-                <div class="bg-white cursor-pointer rounded overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
+                <div class="bg-white cursor-pointer rounded h-fit overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
                     @foreach ($aventure->images as $image)
                         <img class="w-full h-60 object-cover " src="{{ URL('/storage/images/' . $image->image) }}" alt="" />
                     @break
@@ -98,16 +97,8 @@
                     <a href="#">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $aventure->title }}</h5>
                     </a>
-                    <p class="mb-3 font-normal text-gray-700">{{ $aventure->description }}</p>
-                    <a href=""
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center border bg-blue- rounded-lg ">
-                        Read more
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M1 5h12m0 0L9 1m4 4L9 9" />
-                        </svg>
-                    </a>
+                    <p class="mb-3 font-normal text-gray-700 truncate">{{ $aventure->description }}</p>
+
                 </div>
             </div>
         @endforeach

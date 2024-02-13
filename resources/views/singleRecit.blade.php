@@ -3,29 +3,29 @@
 @section('title', 'Aventure')
 
 @section('main')
-    <div class="container h-full w-full my-24  md:px-6">
-        <section class="mb-32">
-            <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-3xl mx-auto bg-white rounded-lg  p-8 font-[sans-serif]">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                    @foreach ($recit->images as $image)
-                        <img class="mb-4" src="{{ asset('storage/images/' . $image->image) }}" alt="{{ $image->alt_text }}">
-                    @endforeach
+    <div class=" h-full w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto">
+                <div class="py-8">
+                    <h1 class="text-3xl font-bold mb-2 font-serif">{{ $recit->title }}
+                    </h1>
+                    <p class="text-gray-500 text-sm"><span class="font-bold text-blue-600 font-serif">Conseils : </span> {{ $recit->conseils }}</p>
                 </div>
-                <div>
-                    <h2 class="text-2xl w-full font-mono font-bold text-gray-800 mb-4">
-                        {{ $recit->title }}
-                    </h2>
-                    <p class="text-base font-bold font-serif text-gray-600 w-full">
-                        {{ $recit->description }}
-                    </p>
 
-                    <h2 class="text-lg font-semibold text-gray-800 mt-4 mb-2">Conseils</h2>
-                    <p class="text-base text-gray-600">
-                        {{ $recit->conseils }}
-                    </p>
+                @foreach ($recit->images as $image)
+                    <img class="mb-4 w-" src="{{ asset('storage/images/' . $image->image) }}" alt="{{ $image->alt_text }}" >
+                @endforeach
+
+                <div class="prose prose-sm sm:prose lg:prose-lg mb-7 xl:prose-xl mx-auto">
+                    <p>{{ $recit->description }}</p>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 @endsection
+
+
+
+
+
+

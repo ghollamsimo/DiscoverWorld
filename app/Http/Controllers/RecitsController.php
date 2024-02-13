@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class RecitsController extends Controller
 {
-    public function addAventure(Request $request)
+    public function Recit(Request $request)
     {
         $data = $request->validate([
             'title' => 'required',
@@ -42,16 +42,16 @@ class RecitsController extends Controller
                 ]);
             }
 
-            return redirect()->route('utilisateur')->with('success', 'Recits Created  successfully!');
+            return redirect()->route('profile')->with('success', 'Recits Created  successfully!');
         } else {
             return back()->with('error', 'Aucune image téléchargée!');
         }
     }
-    public function afficherAventuresUser()
+    public function DisplayTheRecits()
     {
         $userId = Auth::id();
         $aventures = Recit::where('user_id', $userId)->with('images')->get();
-        return view('utilisateur', compact('aventures'));
+        return view('profile', compact('aventures'));
     }
 
     public function afficherAll()
@@ -103,6 +103,12 @@ class RecitsController extends Controller
         // dd($recit);
         return view('singleRecit', [
             "recit" => $recit,
+        ]);
+    }
+
+    public function SingleRecitUser(Recit $recit){
+        return view('profile' , [
+            'recit' => $recit
         ]);
     }
 }
